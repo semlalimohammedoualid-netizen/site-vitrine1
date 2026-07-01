@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Élixir Doré | Parfumerie de Luxe</title>
+    <style>
+        /* Réinitialisation et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* En-tête / Navigation */
+        header {
+            background-color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #b89742;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b89742;
+        }
+
+        /* Section Héro (Accueil) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('affiche.jpeg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #b89742;
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #967931;
+        }
+
+        /* Section Collection (Produits) */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: #b89742;
+            margin: 15px auto 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .product-name {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            color: #222;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #777;
+            padding: 0 20px;
+            margin-bottom: 15px;
+            height: 42px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #b89742;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Section Histoire */
+        .about {
+            background-color: #f4efe6;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+            .hero h1 { font-size: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barres de navigation -->
+    <header>
+        <div class="logo">L'Élixir Doré</div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Accueil -->
+    <section class="hero" id="accueil">
+        <h1>L'Art de la Haute Parfumerie</h1>
+        <p>Découvrez des fragrances rares et envoûtantes, conçues pour laisser une empreinte mémorable.</p>
+        <a href="#collection" class="btn">Découvrir la collection</a>
+    </section>
+
+    <!-- Collection -->
+    <section class="container" id="collection">
+        <h2 class="section-title">Nos Créations Signatures</h2>
+        
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product-card">
+                <img src="chanel.jpeg" alt="Channel" class="product-img">
+                <h3 class="product-name">Blue Channel</h3>
+                <div class="product-price">120,00 €</div>
+                <a href="#contact" class="btn">En savoir plus</a>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card">
+                <img src="jeanpaulnoir.jpeg" alt="elexir" class="product-img">
+                <h3 class="product-name">Jean Paul Elexir</h3>
+                <div class="product-price">115,00 €</div>
+                <a href="#contact" class="btn">En savoir plus</a>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="product-card">
+                <img src="lebeau.jpeg" alt="Parfum Écorce Bleue" class="product-img">
+                <h3 class="product-name">Le beau le Parfum</h3>
+                <div class="product-price">130,00 €</div>
+                <a href="#contact" class="btn">En savoir plus</a>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="product-card">
+                <img src="sauvage.jpeg" alt="sauvage" class="product-img">
+                <h3 class="product-name">Sauvage</h3>
+                <div class="product-price">145,00 €</div>
+                <a href="#contact" class="btn">En savoir plus</a>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="product-card">
+                <img src="valentino.jpeg" alt="valentino" class="product-img">
+                <h3 class="product-name">Valentino</h3>
+                <div class="product-price">90,00 €</div>
+                <a href="#contact" class="btn">En savoir plus</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Histoire -->
+    <section class="about" id="histoire">
+        <div class="about-content">
+            <h2 class="section-title">Merci Pour Votre Visite</h2>
+    </section>
+
+    <!-- Pied de page / Contact -->
+    <footer id="contact">
+        <h3>Contactez la Maison</h3>
+        <p>Boutique : 10 Centre ville, 30101 FES</p>
+        <p>Téléphone : +212 23 45 67 89 | Email : contact@lelixirdore.com</p>
+        <p>&copy; 2026 L'Élixir Doré. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
